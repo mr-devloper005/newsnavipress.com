@@ -1,6 +1,15 @@
 import type { BrandPack } from '@/design/factory/types'
 
 export const BRAND_PACKS: Record<BrandPack['key'], BrandPack> = {
+  'newsnavipress-brand': {
+    key: 'newsnavipress-brand',
+    displayName: 'NewsNaviPress Brand',
+    bodyClassName: 'factory-brand-newsnavipress',
+    fontClassName: 'factory-font-newsnavipress',
+    paletteClassName: 'factory-palette-newsnavipress',
+    surfaceClassName: 'factory-surface-newsnavipress',
+    accentClassName: 'factory-accent-newsnavipress',
+  },
   'editorial-luxe': {
     key: 'editorial-luxe',
     displayName: 'Editorial Luxe',
