@@ -1,6 +1,23 @@
 import type { ThemePackDefinition } from '@/design/factory/recipe-types'
 
 export const THEME_PACKS: Record<ThemePackDefinition['key'], ThemePackDefinition> = {
+  'newsnavipress-media': {
+    key: 'newsnavipress-media',
+    label: 'NewsNaviPress Media',
+    productFamily: 'editorial',
+    brandPack: 'newsnavipress-brand',
+    navbar: 'media-bar',
+    footer: 'media-footer',
+    homeLayout: 'media-home',
+    motionPack: 'media-smooth',
+    defaultTaskTemplates: {
+      article: 'article-media-press',
+      listing: 'listing-media-press',
+      classified: 'classified-media-press',
+      profile: 'profile-media-press',
+    },
+    notes: ['Media press release focus', 'Bold orange/red branding', 'Professional editorial layout', 'Card-based design system'],
+  },
   'yelp-local': {
     key: 'yelp-local',
     label: 'Yelp Local',
