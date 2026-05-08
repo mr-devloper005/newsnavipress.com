@@ -5,6 +5,7 @@ import { Mail, Phone, MapPin, Clock, Building2, Send, Check } from 'lucide-react
 import { NavbarShell } from '@/components/shared/navbar-shell'
 import { FooterNewsNaviPressClean as Footer } from '@/components/shared/footer-clean'
 import { SchemaJsonLd } from '@/components/seo/schema-jsonld'
+import { SITE_CONFIG } from '@/lib/site-config'
 
 
 export default function ContactPage() {

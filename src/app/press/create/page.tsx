@@ -6,6 +6,7 @@ import { ArrowRight, Upload, FileText, Calendar, Globe2, DollarSign, Users, Chec
 import { NavbarShell } from '@/components/shared/navbar-shell'
 import { FooterNewsNaviPressClean as Footer } from '@/components/shared/footer-clean'
 import { SchemaJsonLd } from '@/components/seo/schema-jsonld'
+import { SITE_CONFIG } from '@/lib/site-config'
 
 
 export default function CreatePressReleasePage() {
