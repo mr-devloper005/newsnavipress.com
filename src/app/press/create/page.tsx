@@ -1,28 +1,12 @@
 'use client'
 
-import type { Metadata } from 'next'
 import { useState } from 'react'
 import Link from 'next/link'
 import { ArrowRight, Upload, FileText, Calendar, Globe2, DollarSign, Users, Check, AlertCircle, ChevronRight } from 'lucide-react'
 import { NavbarShell } from '@/components/shared/navbar-shell'
 import { FooterNewsNaviPressClean as Footer } from '@/components/shared/footer-clean'
 import { SchemaJsonLd } from '@/components/seo/schema-jsonld'
-import { SITE_CONFIG } from '@/lib/site-config'
-import { buildPageMetadata } from '@/lib/seo'
 
-export const revalidate = 300
-
-export async function generateMetadata(): Promise<Metadata> {
-  return buildPageMetadata({
-    path: '/press/create',
-    title: 'Create Press Release - NewsNaviPress',
-    description: 'Create and distribute your press release with NewsNaviPress. Reach thousands of media outlets and journalists worldwide.',
-    openGraphTitle: 'Create Press Release - NewsNaviPress',
-    openGraphDescription: 'Create and distribute your press release with NewsNaviPress. Reach thousands of media outlets and journalists worldwide.',
-    image: SITE_CONFIG.defaultOgImage,
-    keywords: ['create press release', 'submit press release', 'press release distribution', 'media outreach'],
-  })
-}
 
 export default function CreatePressReleasePage() {
   const [formData, setFormData] = useState({

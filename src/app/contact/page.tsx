@@ -1,27 +1,11 @@
 'use client'
 
-import type { Metadata } from 'next'
 import { useState } from 'react'
 import { Mail, Phone, MapPin, Clock, Building2, Send, Check } from 'lucide-react'
 import { NavbarShell } from '@/components/shared/navbar-shell'
 import { FooterNewsNaviPressClean as Footer } from '@/components/shared/footer-clean'
 import { SchemaJsonLd } from '@/components/seo/schema-jsonld'
-import { SITE_CONFIG } from '@/lib/site-config'
-import { buildPageMetadata } from '@/lib/seo'
 
-export const revalidate = 300
-
-export async function generateMetadata(): Promise<Metadata> {
-  return buildPageMetadata({
-    path: '/contact',
-    title: 'Contact Us - NewsNaviPress',
-    description: 'Get in touch with NewsNaviPress for press release distribution services. Contact our team for sales, support, and media inquiries.',
-    openGraphTitle: 'Contact Us - NewsNaviPress',
-    openGraphDescription: 'Get in touch with NewsNaviPress for press release distribution services. Contact our team for sales, support, and media inquiries.',
-    image: SITE_CONFIG.defaultOgImage,
-    keywords: ['contact', 'support', 'sales', 'press release distribution'],
-  })
-}
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
