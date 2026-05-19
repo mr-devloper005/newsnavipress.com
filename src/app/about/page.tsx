@@ -103,8 +103,9 @@ export default function AboutPage() {
       <NavbarShell />
       
       {/* Hero Section */}
-      <section className="newsnavipress-hero text-white py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden text-white py-16 lg:py-24" style={{ background: 'linear-gradient(135deg, #FA812F 0%, #DD0303 100%)' }}>
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">
               About NewsNaviPress
@@ -112,15 +113,7 @@ export default function AboutPage() {
             <p className="text-xl mb-8 text-white/90">
               Empowering businesses to share their stories with the world through innovative press release distribution solutions
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/pricing" className="newsnavipress-button-primary bg-white text-primary hover:bg-gray-100 inline-flex items-center justify-center">
-                View Our Services
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-              <Link href="/contact" className="newsnavipress-button-secondary border-2 border-white text-white hover:bg-white hover:text-primary inline-flex items-center justify-center">
-                Contact Our Team
-              </Link>
-            </div>
+
           </div>
         </div>
       </section>
@@ -131,8 +124,8 @@ export default function AboutPage() {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <stat.icon className="h-8 w-8 text-primary" />
+                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <stat.icon className="h-8 w-8 text-[#FA812F]" />
                 </div>
                 <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
                 <div className="text-gray-600">{stat.label}</div>
@@ -157,13 +150,17 @@ export default function AboutPage() {
               <p className="text-lg text-gray-600 leading-relaxed">
                 Today, NewsNaviPress stands at the forefront of the industry, combining cutting-edge technology with human expertise to deliver unparalleled distribution results. Our platform leverages artificial intelligence, extensive media relationships, and deep industry knowledge to ensure your press releases reach the right journalists, influencers, and media outlets.
               </p>
-              <Link href="/contact" className="newsnavipress-button-primary inline-flex items-center mt-6">
+              <Link
+                href="/contact"
+                style={{ background: 'linear-gradient(135deg, #FA812F 0%, #DD0303 100%)' }}
+                className="text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:opacity-90 hover:shadow-lg inline-flex items-center mt-6"
+              >
                 Get in Touch
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </div>
             <div className="bg-gray-200 rounded-2xl p-8 flex items-center justify-center">
-              <TrendingUp className="h-32 w-32 text-primary" />
+              <TrendingUp className="h-32 w-32 text-[#FA812F]" />
             </div>
           </div>
         </div>
@@ -180,8 +177,8 @@ export default function AboutPage() {
           <div className="grid gap-8 md:grid-cols-3">
             {values.map((value, index) => (
               <div key={index} className="newsnavipress-card p-8 text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <value.icon className="h-8 w-8 text-primary" />
+                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <value.icon className="h-8 w-8 text-[#FA812F]" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">{value.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{value.description}</p>
@@ -202,7 +199,7 @@ export default function AboutPage() {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {timeline.map((event, index) => (
               <div key={index} className="newsnavipress-card p-6 text-center relative">
-                <div className="text-2xl font-bold text-primary mb-3">{event.year}</div>
+                <div className="text-2xl font-bold text-[#FA812F] mb-3">{event.year}</div>
                 <h3 className="text-lg font-bold text-gray-900 mb-3">{event.title}</h3>
                 <p className="text-gray-600 text-sm">{event.description}</p>
                 {index < timeline.length - 1 && (
@@ -226,13 +223,13 @@ export default function AboutPage() {
             {team.map((member, index) => (
               <div key={index} className="newsnavipress-card overflow-hidden text-center group">
                 <div className="h-48 bg-gray-200 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-orange-200/40 to-red-200/40 flex items-center justify-center">
                     <Users className="h-16 w-16 text-white/50" />
                   </div>
                 </div>
                 <div className="p-6">
                   <h3 className="text-lg font-bold text-gray-900 mb-2">{member.name}</h3>
-                  <div className="text-primary font-semibold mb-3">{member.role}</div>
+                  <div className="text-[#FA812F] font-semibold mb-3">{member.role}</div>
                   <p className="text-gray-600 text-sm leading-relaxed">{member.bio}</p>
                 </div>
               </div>
@@ -242,19 +239,16 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-white">
+      <section className="py-20 text-white" style={{ background: 'linear-gradient(135deg, #FA812F 0%, #DD0303 100%)' }}>
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-6">Ready to Amplify Your Message?</h2>
           <p className="text-xl mb-8 text-white/90">
             Join thousands of businesses that trust NewsNaviPress for their press release distribution needs
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/press/create" className="newsnavipress-button-primary bg-white text-primary hover:bg-gray-100 inline-flex items-center justify-center">
+            <Link href="/contact" className="bg-white text-[#FA812F] hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg inline-flex items-center justify-center">
               Submit Press Release
               <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-            <Link href="/pricing" className="newsnavipress-button-secondary border-2 border-white text-white hover:bg-white hover:text-primary inline-flex items-center justify-center">
-              View Pricing
             </Link>
           </div>
         </div>
