@@ -3,7 +3,7 @@ import { SITE_CONFIG } from '@/lib/site-config'
 import { fetchTaskPosts } from '@/lib/task-data'
 import { CATEGORY_OPTIONS, normalizeCategory } from '@/lib/categories'
 
-export const FOOTER_OVERRIDE_ENABLED = true
+export const FOOTER_OVERRIDE_ENABLED = false
 
 
 const getCategoryLabel = (value: string) => {

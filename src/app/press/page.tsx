@@ -127,8 +127,9 @@ export default function PressReleasePage() {
       <NavbarShell />
       
       {/* Hero Section */}
-      <section className="newsnavipress-hero text-white py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden text-white py-16 lg:py-24" style={{ background: 'linear-gradient(135deg, #FA812F 0%, #DD0303 100%)' }}>
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">
               Press Releases & News
@@ -168,7 +169,7 @@ export default function PressReleasePage() {
                     onClick={() => setSelectedCategory(category)}
                     className={`px-4 py-2 rounded-lg transition-colors ${
                       selectedCategory === category
-                        ? "bg-white text-primary"
+                        ? "bg-white text-[#FA812F]"
                         : "bg-white/20 text-white hover:bg-white/30"
                     }`}
                   >
@@ -186,19 +187,19 @@ export default function PressReleasePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 grid-cols-2 md:grid-cols-4">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">5,000+</div>
+              <div className="text-3xl font-bold text-[#FA812F] mb-2">5,000+</div>
               <div className="text-gray-600">Press Releases Distributed</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">10M+</div>
+              <div className="text-3xl font-bold text-[#FA812F] mb-2">10M+</div>
               <div className="text-gray-600">Media Impressions</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">500+</div>
+              <div className="text-3xl font-bold text-[#FA812F] mb-2">500+</div>
               <div className="text-gray-600">Media Outlets</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">98%</div>
+              <div className="text-3xl font-bold text-[#FA812F] mb-2">98%</div>
               <div className="text-gray-600">Client Satisfaction</div>
             </div>
           </div>
@@ -211,16 +212,16 @@ export default function PressReleasePage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center mb-8">
               <h2 className="text-3xl font-bold text-gray-900">Featured Press Releases</h2>
-              <TrendingUp className="h-6 w-6 text-primary" />
+              <TrendingUp className="h-6 w-6 text-[#FA812F]" />
             </div>
             
             <div className="grid gap-8 lg:grid-cols-2">
               {featuredReleases.map((release) => (
                 <article key={release.id} className="newsnavipress-card overflow-hidden group cursor-pointer">
                   <div className="h-48 bg-gray-200 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-orange-200/40 to-red-200/40"></div>
                     <div className="absolute top-4 left-4">
-                      <span className="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      <span className="text-white px-3 py-1 rounded-full text-sm font-semibold" style={{ background: '#FA812F' }}>
                         Featured
                       </span>
                     </div>
@@ -239,7 +240,7 @@ export default function PressReleasePage() {
                         {release.category}
                       </span>
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#FA812F] transition-colors line-clamp-2">
                       {release.title}
                     </h3>
                     <p className="text-gray-600 mb-4 line-clamp-3">
@@ -251,7 +252,7 @@ export default function PressReleasePage() {
                       </div>
                       <Link 
                         href={`/press/${release.slug}`}
-                        className="text-primary font-semibold inline-flex items-center hover:gap-2 transition-all"
+                        className="text-[#FA812F] font-semibold inline-flex items-center hover:gap-2 transition-all"
                       >
                         Read Full Release
                         <ChevronRight className="h-4 w-4" />
@@ -275,7 +276,7 @@ export default function PressReleasePage() {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="px-4 py-2 border border-gray-300 rounded-lg bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary"
+              className="px-4 py-2 border border-gray-300 rounded-lg bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#FA812F]"
             >
               {sortOptions.map((option) => (
                 <option key={option} value={option}>{option}</option>
@@ -296,7 +297,7 @@ export default function PressReleasePage() {
               {regularReleases.map((release) => (
                 <article key={release.id} className="newsnavipress-card overflow-hidden group cursor-pointer">
                   <div className="h-40 bg-gray-200 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-orange-200/40 to-red-200/40"></div>
                   </div>
                   <div className="p-4">
                     <div className="flex items-center gap-3 text-sm text-gray-500 mb-2">
@@ -308,7 +309,7 @@ export default function PressReleasePage() {
                         {release.category}
                       </span>
                     </div>
-                    <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                    <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-[#FA812F] transition-colors line-clamp-2">
                       {release.title}
                     </h3>
                     <p className="text-sm text-gray-600 mb-3 line-clamp-2">
@@ -316,7 +317,7 @@ export default function PressReleasePage() {
                     </p>
                     <Link 
                       href={`/press/${release.slug}`}
-                      className="text-primary text-sm font-semibold inline-flex items-center hover:gap-2 transition-all"
+                      className="text-[#FA812F] text-sm font-semibold inline-flex items-center hover:gap-2 transition-all"
                     >
                       Read More
                       <ChevronRight className="h-3 w-3" />
@@ -330,7 +331,10 @@ export default function PressReleasePage() {
           {/* Load More */}
           {filteredReleases.length > 6 && (
             <div className="text-center mt-12">
-              <button className="newsnavipress-button-primary inline-flex items-center">
+              <button
+                style={{ background: 'linear-gradient(135deg, #FA812F 0%, #DD0303 100%)' }}
+                className="text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:opacity-90 hover:shadow-lg inline-flex items-center"
+              >
                 Load More Press Releases
                 <ArrowRight className="ml-2 h-5 w-5" />
               </button>
@@ -340,18 +344,18 @@ export default function PressReleasePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-white">
+      <section className="py-20 text-white" style={{ background: 'linear-gradient(135deg, #FA812F 0%, #DD0303 100%)' }}>
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-6">Distribute Your Press Release</h2>
           <p className="text-xl mb-8 text-white/90">
             Ready to share your news with the world? Get started with our professional press release distribution service.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/press/create" className="newsnavipress-button-primary bg-white text-primary hover:bg-gray-100 inline-flex items-center justify-center">
+            <Link href="/press/create" className="bg-white text-[#FA812F] hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg inline-flex items-center justify-center">
               Submit Press Release
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
-            <Link href="/pricing" className="newsnavipress-button-secondary border-2 border-white text-white hover:bg-white hover:text-primary inline-flex items-center justify-center">
+            <Link href="/pricing" className="border-2 border-white text-white hover:bg-white hover:text-[#FA812F] px-8 py-4 rounded-lg font-semibold transition-all duration-300 inline-flex items-center justify-center">
               View Pricing
             </Link>
           </div>
