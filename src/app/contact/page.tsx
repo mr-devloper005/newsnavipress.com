@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Mail, Phone, MapPin, Clock, Building2, Send, Check } from 'lucide-react'
+import { Send, Check } from 'lucide-react'
 import { NavbarShell } from '@/components/shared/navbar-shell'
 import { FooterNewsNaviPressClean as Footer } from '@/components/shared/footer-clean'
 import { SchemaJsonLd } from '@/components/seo/schema-jsonld'
@@ -51,8 +51,9 @@ export default function ContactPage() {
       <NavbarShell />
       
       {/* Hero Section */}
-      <section className="newsnavipress-hero text-white py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden text-white py-16 lg:py-24" style={{ background: 'linear-gradient(135deg, #FA812F 0%, #DD0303 100%)' }}>
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">
               Contact Us
@@ -67,7 +68,7 @@ export default function ContactPage() {
       {/* Contact Form and Info */}
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr]">
+          <div className="max-w-2xl mx-auto">
             
             {/* Contact Form */}
             <div>
@@ -206,7 +207,8 @@ export default function ContactPage() {
 
                   <button
                     type="submit"
-                    className="newsnavipress-button-primary w-full flex items-center justify-center"
+                    className="w-full flex items-center justify-center px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:opacity-90 hover:shadow-lg text-white"
+                    style={{ background: 'linear-gradient(135deg, #FA812F 0%, #DD0303 100%)' }}
                   >
                     <Send className="mr-2 h-5 w-5" />
                     Submit Now
@@ -215,102 +217,12 @@ export default function ContactPage() {
               )}
             </div>
 
-            {/* Contact Information */}
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Get in Touch</h2>
-              
-              <div className="space-y-6">
-                {/* Telephone Hours */}
-                <div className="newsnavipress-card p-6">
-                  <div className="flex items-start gap-4">
-                    <Clock className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-2">Telephone Hours</h3>
-                      <p className="text-gray-600">Monday to Friday 8:30am to 5:00pm Pacific (PDT)</p>
-                    </div>
-                  </div>
-                </div>
 
-                {/* Phone Numbers */}
-                <div className="newsnavipress-card p-6">
-                  <div className="flex items-start gap-4">
-                    <Phone className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-2">Phone Numbers</h3>
-                      <p className="text-gray-600">
-                        Toll Free: <span className="font-semibold">1-888-880-9539</span><br />
-                        Direct: <span className="font-semibold">(646) 417-8294</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* US Address */}
-                <div className="newsnavipress-card p-6">
-                  <div className="flex items-start gap-4">
-                    <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-2">US Address</h3>
-                      <p className="text-gray-600">
-                        Suite 1400 - 506 Second Avenue<br />
-                        Seattle, WA 98104<br />
-                        USA
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Canada Address */}
-                <div className="newsnavipress-card p-6">
-                  <div className="flex items-start gap-4">
-                    <Building2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-2">Canada Address</h3>
-                      <p className="text-gray-600">
-                        Suite 203 - 901 West 3rd St.<br />
-                        North Vancouver, BC V7P 3P9<br />
-                        Canada
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Email */}
-                <div className="newsnavipress-card p-6">
-                  <div className="flex items-start gap-4">
-                    <Mail className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-2">Email</h3>
-                      <p className="text-gray-600">
-                        General: <span className="font-semibold">info@newsnavipress.com</span><br />
-                        Support: <span className="font-semibold">support@newsnavipress.com</span><br />
-                        Sales: <span className="font-semibold">sales@newsnavipress.com</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ Banner */}
-      <section className="py-16 bg-gray-50">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <div className="newsnavipress-card p-8 text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-lg text-gray-600 mb-6">
-              Please take a moment to check out our FAQs for quick answers to common questions.
-            </p>
-            <a href="/faq" className="newsnavipress-button-primary inline-flex items-center">
-              VIEW FAQs
-            </a>
-          </div>
-        </div>
-      </section>
+
 
       <Footer />
       <SchemaJsonLd data={{
