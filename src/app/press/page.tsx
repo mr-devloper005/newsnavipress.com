@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Search, Filter, Calendar, ChevronRight, ArrowRight, Globe2, Building2, TrendingUp, Clock } from 'lucide-react'
+import { Search, Filter, ChevronRight, ArrowRight, Globe2, Building2, TrendingUp, Clock } from 'lucide-react'
 import { NavbarShell } from '@/components/shared/navbar-shell'
 import { FooterNewsNaviPressClean as Footer } from '@/components/shared/footer-clean'
 import { SchemaJsonLd } from '@/components/seo/schema-jsonld'
@@ -229,10 +229,6 @@ export default function PressReleasePage() {
                   <div className="p-6">
                     <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
                       <div className="flex items-center gap-1">
-                        <Calendar className="h-4 w-4" />
-                        {release.date}
-                      </div>
-                      <div className="flex items-center gap-1">
                         <Clock className="h-4 w-4" />
                         {release.readTime}
                       </div>
@@ -301,10 +297,6 @@ export default function PressReleasePage() {
                   </div>
                   <div className="p-4">
                     <div className="flex items-center gap-3 text-sm text-gray-500 mb-2">
-                      <div className="flex items-center gap-1">
-                        <Calendar className="h-3 w-3" />
-                        {release.date}
-                      </div>
                       <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
                         {release.category}
                       </span>
